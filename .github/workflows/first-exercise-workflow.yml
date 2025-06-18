@@ -1,9 +1,9 @@
 name: first-exercise-workflow
 on: [push]
 
-job: 
+jobs: 
   shell-cmd-job: 
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: python version
         run: |
