@@ -1,0 +1,11 @@
+name: first-exercise-workflow
+on: [push]
+
+job: 
+  shell-cmd-job: 
+    run-on: ubuntu-latest
+    steps: 
+      - name: python version
+        run: |
+           python —version
+           pip —version
