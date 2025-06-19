@@ -1,5 +1,5 @@
 name: first-workflow
-on: [push]
+on: []
 
 jobs:
   shell-cmd-job:

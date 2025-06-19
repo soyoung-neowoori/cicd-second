@@ -1,5 +1,5 @@
 name: first-exercise-workflow
-on: [push]
+on: []
 
 jobs: 
   shell-cmd-job: 
