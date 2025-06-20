@@ -1,7 +1,7 @@
 name: first-exercise-workflow
 on: 
   workflow_dispatch
-# [push]
+# [push, pull_request]
 
 jobs: 
   shell-cmd-job: 

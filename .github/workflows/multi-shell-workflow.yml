@@ -1,0 +1,33 @@
+name: multi-shell-workflow
+on: [push] 
+defaults: 
+  run: 
+    shell: bash
+
+jobs: 
+  shell-bash: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: bash에서 uname -a 실행
+        run: 
+          uname -a
+  shell-pwsh-python-node: 
+    runs-on: windows-latest
+    defaults: 
+      run:
+        shell: pwsh
+    steps: 
+      - name: pwsh에서 Get-ComputerInfo 실행
+        run: 
+          Get-ComputerInfo
+      - name: python에서 sys.version
+        shell: python
+        run:    
+          sys.version
+      - name: node에서 process.version
+        shell: node
+        run:
+          process.version
+    
+
+          
