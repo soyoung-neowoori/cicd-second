@@ -1,5 +1,6 @@
 name: first-exercise-workflow
-on: []
+on: workflow_dispatch
+# [push]
 
 jobs: 
   shell-cmd-job: 
