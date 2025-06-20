@@ -24,7 +24,7 @@ jobs:
         shell: python
         run: |
           import sys   
-          sys.version
+          print(sys.version)
       - name: node에서 process.version 출력
         run: |
           node -e "console.log(process.version)"
