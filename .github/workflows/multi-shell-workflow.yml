@@ -18,16 +18,17 @@ jobs:
         shell: pwsh
     steps: 
       - name: pwsh에서 Get-ComputerInfo 실행
-        run: 
+        run: |
+          import sys
           Get-ComputerInfo
-      - name: python에서 sys.version
+      - name: python에서 sys.version 실행
         shell: python
         run:    
           sys.version
-      - name: node에서 process.version
+      - name: node에서 process.version 실행
         shell: node
-        run:
-          process.version
+        run: |
+          console.log(process.version)
     
 
           
