@@ -1,22 +1,17 @@
 name: multi-shell-workflow
 on: [push] 
-defaults: 
-  run: 
-    shell: bash
 
 jobs: 
-  shell-bash: 
-    runs-on: ubuntu-latest
-    steps: 
-      - name: bash에서 uname -a 출력
-        run: 
-          uname -a
-  shell-pwsh-python-node: 
+  shell-bash-pwsh-python-node: 
     runs-on: windows-latest
     defaults: 
       run:
         shell: pwsh
     steps: 
+      - name: bash에서 uname -a 출력
+        shell: bash
+        run: 
+          uname -a
       - name: pwsh에서 Get-ComputerInfo 출력
         run: 
           Get-ComputerInfo
@@ -28,3 +23,15 @@ jobs:
       - name: node에서 process.version 출력
         run: |
           node -e "console.log(process.version)"
+  dir-search: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: 디렉토리에 test_folder생성
+        run: |
+          mkdir -p /home/runner/test_folder
+      - name: test_folder 안에 sample.txt 생성
+        run: 
+          echo "hello sample" > /home/runner/test_folder/sample.txt  
+      - name: working-directory 를 사용하여 파일 내용 확인
+        run: cat sample.txt
+        working-directory: /home/runner/test_folder
