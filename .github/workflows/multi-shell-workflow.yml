@@ -28,7 +28,7 @@ jobs:
       - name: node에서 process.version 실행
         shell: node
         run: |
-          console.log(process.version)
+          node -v
     
 
           
